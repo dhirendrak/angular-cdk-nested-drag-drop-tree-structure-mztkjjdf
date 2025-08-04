@@ -1,0 +1,7 @@
+<div class="root" cdkDropList [id]="root.uId" [cdkDropListData]="root.children" [cdkDropListConnectedTo]="connectedTo"
+  (cdkDropListDropped)="onDragDrop($event)">
+  <ng-container *ngFor="let item of root.children">
+    <app-sub-item [item]="item" [connectedTo]="connectedTo" (itemDrop)="onDragDrop($event)">
+    </app-sub-item>
+  </ng-container>
+</div>
