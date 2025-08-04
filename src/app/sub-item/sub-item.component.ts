@@ -3,16 +3,14 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output,
-  ChangeDetectionStrategy
+  Output
 } from '@angular/core';
 import { Item } from '../../data';
 
 @Component({
   selector: 'app-sub-item',
   templateUrl: './sub-item.component.html',
-  styleUrls: ['./sub-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./sub-item.component.css']
 })
 export class SubItemComponent {
   @Input() item!: Item;
