@@ -15,15 +15,15 @@ import { Item } from '../../data';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SubItemComponent {
-  @Input() item: Item;
-  @Input() connectedTo: string[];
-  @Output() itemDrop: EventEmitter<CdkDragDrop<Item>>;
+  @Input() item!: Item;
+  @Input() connectedTo!: string[];
+  @Output() itemDrop: EventEmitter<CdkDragDrop<Item[]>>;
 
   constructor() {
     this.itemDrop = new EventEmitter();
   }
 
-  public onDragDrop(event: CdkDragDrop<Item, Item>): void {
+  public onDragDrop(event: CdkDragDrop<Item[]>): void {
     this.itemDrop.emit(event);
   }
 }
